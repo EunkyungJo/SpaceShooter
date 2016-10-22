@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
 	public float fireRate;
 
 	private float nextFire;
+	private AudioSource audioSource;
 
 	void FixedUpdate()
 	{
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			nextFire = Time.time + fireRate;
 			Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+			GetComponent<AudioSource> ().Play ();
 		}
 	}
 }
